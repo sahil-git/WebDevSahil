@@ -1,0 +1,82 @@
+.header {
+    .wds-container {
+        gap: 0;
+    }
+
+    .site-branding {
+        img {
+            aspect-ratio: 2000 / 300;
+            width: 150px;
+            height: auto;
+        }
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background: $secondary-color;
+        padding-right: 50px;
+    }
+
+    .main-navigation {
+        width: auto;
+        display: none;
+    }
+
+    .main-navigation.show-mobile {
+        display: block;
+    }
+
+    .menu {
+        display: flex;
+        gap: 30px;
+        flex-direction: column;
+
+        li:last-child {
+            margin-left: 0;
+        }
+
+        li:last-child a {
+            background-color: $primary-color;
+            padding: 10px 20px;
+        }
+
+        li:last-child:hover a {
+            text-decoration: none;
+            background-color: $primary-color;
+        }
+
+    }
+
+    .burger-menu {
+        display: inline-block;
+        margin-left: auto;
+
+        .bar1,
+        .bar2,
+        .bar3 {
+            width: 20px;
+            height: 2px;
+            background-color: #fff;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+    }
+
+    
+    .burger-menu.change .bar1 {
+        transform: translate(0, 3px) rotate(-45deg);
+    }
+
+    .burger-menu.change .bar2 {
+        opacity: 0;
+    }
+
+    .burger-menu.change .bar3 {
+        transform: translate(0, -11px) rotate(45deg);
+    }
+
+
+}

@@ -1,0 +1,96 @@
+/*
+    Theme Name: WebDevSahil
+    Theme URI: https://webdevsahil.com/
+    Author: Your Name
+    Author URI: https://webdevsahil.com/
+    Description: Insights, Code, and Creativity 
+    Version: 1.0
+    Text Domain: webdevsahil
+*/
+
+$primary-color: #28293E;
+$secondary-color: #EF6D58;
+$tertiary-color: #FDF0E9;
+
+$container-width: 1185px;
+
+@mixin font16{
+    font-size: 16px;
+    line-height: 32px;
+}
+
+
+
+
+@import "fonts.scss";
+
+body{
+    background-color: $tertiary-color;
+    font-family: 'Epilogue', sans-serif;
+    margin: 0;
+}
+
+.wds-container{
+    box-sizing: border-box;
+    width: 100%;
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+.header{
+    background-color: $primary-color;
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    .main-navigation{
+        width: 100%;
+    }
+
+    .wds-container{
+        display: flex;
+        gap: 50px;
+    }
+
+    .menu{
+        list-style: none;
+        display: flex;
+        gap: 100px;
+
+        a{
+            @include font16;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        a:hover{
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        li:last-child{
+            margin-left: auto;
+        }
+        
+        li:last-child a{
+            padding: 22px 35px 18px 35px;
+            border: 1px solid #FFFFFF4B;
+            border-radius: 6px;
+        }
+        
+        li:last-child:hover a{
+            text-decoration: none;
+            background-color: $secondary-color;
+        }
+
+    }
+
+    .burger-menu{
+        display: none;
+    }
+}
+ 
+
+@media (max-width: 1280px){
+    @import "mobile.scss";
+}
