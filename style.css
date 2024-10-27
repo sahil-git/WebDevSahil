@@ -1,1 +1,306 @@
-@font-face{font-family:"Epilogue";font-weight:300;font-style:normal;src:url("fonts/Epilogue-Light.woff2") format("woff2");font-display:swap}@font-face{font-family:"Epilogue";font-weight:300;font-style:italic;src:url("fonts/Epilogue-LightItalic.woff2") format("woff2");font-display:swap}@font-face{font-family:"Epilogue";font-weight:400;font-style:normal;src:url("fonts/Epilogue-Regular.woff2") format("woff2");font-display:swap}@font-face{font-family:"Epilogue";font-weight:400;font-style:italic;src:url("fonts/Epilogue-Italic.woff2") format("woff2");font-display:swap}@font-face{font-family:"Epilogue";font-weight:500;font-style:normal;src:url("fonts/Epilogue-Medium.woff2") format("woff2");font-display:swap}@font-face{font-family:"Epilogue";font-weight:600;font-style:normal;src:url("fonts/Epilogue-SemiBold.woff2") format("woff2");font-display:swap}@font-face{font-family:"Epilogue";font-weight:700;font-style:normal;src:url("fonts/Epilogue-Bold.woff2") format("woff2");font-display:swap}@font-face{font-family:"Epilogue";font-weight:700;font-style:italic;src:url("fonts/Epilogue-BoldItalic.woff2") format("woff2");font-display:swap}body{background-color:#FDF0E9;font-family:"Epilogue",sans-serif;margin:0}.wds-container{-webkit-box-sizing:border-box;box-sizing:border-box;width:100%;max-width:1185px;margin:0 auto;padding:0 25px}.header{background-color:#28293E;padding-top:16px;padding-bottom:16px}.header .main-navigation{width:100%}.header .wds-container{display:-webkit-box;display:-ms-flexbox;display:flex;gap:50px}.header .menu{list-style:none;display:-webkit-box;display:-ms-flexbox;display:flex;gap:100px}.header .menu a{font-size:16px;line-height:32px;color:#fff;text-decoration:none}.header .menu a:hover{color:#fff;text-decoration:underline}.header .menu li:last-child{margin-left:auto}.header .menu li:last-child a{padding:22px 35px 18px 35px;border:1px solid rgba(255,255,255,0.2941176471);border-radius:6px}.header .menu li:last-child:hover a{text-decoration:none;background-color:#EF6D58}.header .burger-menu{display:none}@media (max-width:1280px){.header .wds-container{gap:0}.header .site-branding img{aspect-ratio:2000/300;width:150px;height:auto}.header nav{position:fixed;top:0;left:0;bottom:0;background:#EF6D58;padding-right:50px}.header .main-navigation{width:auto;display:none}.header .main-navigation.show-mobile{display:block}.header .menu{display:-webkit-box;display:-ms-flexbox;display:flex;gap:30px;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.header .menu li:last-child{margin-left:0}.header .menu li:last-child a{background-color:#28293E;padding:10px 20px}.header .menu li:last-child:hover a{text-decoration:none;background-color:#28293E}.header .burger-menu{display:inline-block;margin-left:auto}.header .burger-menu .bar1,.header .burger-menu .bar2,.header .burger-menu .bar3{width:20px;height:2px;background-color:#fff;margin:6px 0;-webkit-transition:0.4s;transition:0.4s}.header .burger-menu.change .bar1{-webkit-transform:translate(0,3px) rotate(-45deg);transform:translate(0,3px) rotate(-45deg)}.header .burger-menu.change .bar2{opacity:0}.header .burger-menu.change .bar3{-webkit-transform:translate(0,-11px) rotate(45deg);transform:translate(0,-11px) rotate(45deg)}}
+/*
+    Theme Name: WebDevSahil
+    Theme URI: https://webdevsahil.com/
+    Author: Your Name
+    Author URI: https://webdevsahil.com/
+    Description: Insights, Code, and Creativity 
+    Version: 1.0
+    Text Domain: webdevsahil
+*/
+@font-face {
+  font-family: "Epilogue";
+  font-weight: 300;
+  font-style: normal;
+  src: url("fonts/Epilogue-Light.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Epilogue";
+  font-weight: 300;
+  font-style: italic;
+  src: url("fonts/Epilogue-LightItalic.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Epilogue";
+  font-weight: 400;
+  font-style: normal;
+  src: url("fonts/Epilogue-Black.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Epilogue";
+  font-weight: 400;
+  font-style: italic;
+  src: url("fonts/Epilogue-BlackItalic.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Epilogue";
+  font-weight: 500;
+  font-style: normal;
+  src: url("fonts/Epilogue-Medium.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Epilogue";
+  font-weight: 600;
+  font-style: normal;
+  src: url("fonts/Epilogue-SemiBold.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Epilogue";
+  font-weight: 700;
+  font-style: normal;
+  src: url("fonts/Epilogue-Bold.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Epilogue";
+  font-weight: 700;
+  font-style: italic;
+  src: url("fonts/Epilogue-BoldItalic.woff2") format("woff2");
+  font-display: swap;
+}
+body {
+  background-color: #FDF0E9;
+  font-family: "Epilogue", sans-serif;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.wds-container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  max-width: 1185px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+.header {
+  background-color: #28293E;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.header .site-branding img {
+  aspect-ratio: 2000/300;
+  width: 200px;
+  height: auto;
+}
+.header .main-navigation {
+  width: 100%;
+}
+.header .wds-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header .menu {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 100px;
+}
+.header .menu a {
+  font-size: 16px;
+  line-height: 32px;
+  color: #fff;
+  text-decoration: none;
+}
+.header .menu a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+.header .menu li:last-child {
+  margin-left: auto;
+}
+.header .menu li:last-child a {
+  padding: 22px 35px 18px 35px;
+  border: 1px solid rgba(255, 255, 255, 0.2941176471);
+  border-radius: 6px;
+}
+.header .menu li:last-child:hover a {
+  text-decoration: none;
+  background-color: #EF6D58;
+}
+.header .burger-menu {
+  display: none;
+}
+
+.footer {
+  padding: 50px 0;
+}
+.footer .footer-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 150px;
+}
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+.footer h3 {
+  font-size: 16px;
+  line-height: 32px;
+  font-weight: 500;
+  color: #EF6D58;
+}
+.footer ul li a {
+  font-size: 16px;
+  line-height: 32px;
+  color: #391400;
+  text-decoration: none;
+}
+.footer ul li a:hover {
+  text-decoration: underline;
+}
+.footer .about-us h2 {
+  font-weight: bold;
+}
+.footer .social-links {
+  margin-left: auto;
+}
+.footer .social-links ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+}
+.footer .social-links ul li a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #EF6D58;
+}
+.footer .social-links ul li a:hover {
+  background-color: #28293E;
+}
+.footer .site-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.footer .important-links {
+  margin-left: auto;
+}
+.footer .important-links ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 1280px) {
+  .header .wds-container {
+    gap: 0;
+  }
+  .header .site-branding img {
+    aspect-ratio: 2000/300;
+    width: 150px;
+    height: auto;
+  }
+  .header nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: #EF6D58;
+    padding-right: 50px;
+  }
+  .header .main-navigation {
+    width: auto;
+    display: none;
+  }
+  .header .main-navigation.show-mobile {
+    display: block;
+  }
+  .header .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 30px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .header .menu li:last-child {
+    margin-left: 0;
+  }
+  .header .menu li:last-child a {
+    background-color: #28293E;
+    padding: 10px 20px;
+  }
+  .header .menu li:last-child:hover a {
+    text-decoration: none;
+    background-color: #28293E;
+  }
+  .header .burger-menu {
+    display: inline-block;
+    margin-left: auto;
+  }
+  .header .burger-menu .bar1,
+  .header .burger-menu .bar2,
+  .header .burger-menu .bar3 {
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    margin: 6px 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  .header .burger-menu.change .bar1 {
+    -webkit-transform: translate(0, 5px) rotate(-45deg);
+            transform: translate(0, 5px) rotate(-45deg);
+  }
+  .header .burger-menu.change .bar2 {
+    opacity: 0;
+  }
+  .header .burger-menu.change .bar3 {
+    -webkit-transform: translate(0, -11px) rotate(45deg);
+            transform: translate(0, -11px) rotate(45deg);
+  }
+  .footer .footer-flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+  .footer .social-links {
+    margin: 0 auto;
+  }
+  .footer .social-links ul {
+    gap: 20px;
+  }
+  .footer .site-info {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+  }
+  .footer .site-info .important-links ul {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}

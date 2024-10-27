@@ -67,7 +67,7 @@
 
     
     .burger-menu.change .bar1 {
-        transform: translate(0, 3px) rotate(-45deg);
+        transform: translate(0, 5px) rotate(-45deg);
     }
 
     .burger-menu.change .bar2 {
@@ -79,4 +79,31 @@
     }
 
 
+}
+
+.footer {
+    .footer-flex {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .social-links{
+        margin: 0 auto;
+
+        ul{
+            gap: 20px;
+        }
+    }
+
+    .site-info{
+        display: block;
+        text-align: center;
+        margin-top: 30px;
+
+        .important-links ul{
+            justify-content: center;
+        }
+    }
+    
 }

@@ -14,23 +14,30 @@ $tertiary-color: #FDF0E9;
 
 $container-width: 1185px;
 
-@mixin font16{
+@mixin font16 {
     font-size: 16px;
     line-height: 32px;
 }
 
-
-
-
 @import "fonts.scss";
 
-body{
+body {
     background-color: $tertiary-color;
     font-family: 'Epilogue', sans-serif;
     margin: 0;
 }
 
-.wds-container{
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.wds-container {
     box-sizing: border-box;
     width: 100%;
     max-width: $container-width;
@@ -38,59 +45,138 @@ body{
     padding: 0 25px;
 }
 
-.header{
+.header {
     background-color: $primary-color;
     padding-top: 16px;
     padding-bottom: 16px;
 
-    .main-navigation{
+    .site-branding {
+        img {
+            aspect-ratio: 2000 / 300;
+            width: 200px;
+            height: auto;
+        }
+    }
+
+    .main-navigation {
         width: 100%;
     }
 
-    .wds-container{
+    .wds-container {
         display: flex;
         gap: 50px;
+        align-items: center;
     }
 
-    .menu{
+    .menu {
         list-style: none;
         display: flex;
         gap: 100px;
 
-        a{
+        a {
             @include font16;
             color: #fff;
             text-decoration: none;
         }
 
-        a:hover{
+        a:hover {
             color: #fff;
             text-decoration: underline;
         }
 
-        li:last-child{
+        li:last-child {
             margin-left: auto;
         }
-        
-        li:last-child a{
+
+        li:last-child a {
             padding: 22px 35px 18px 35px;
             border: 1px solid #FFFFFF4B;
             border-radius: 6px;
         }
-        
-        li:last-child:hover a{
+
+        li:last-child:hover a {
             text-decoration: none;
             background-color: $secondary-color;
         }
 
     }
 
-    .burger-menu{
+    .burger-menu {
         display: none;
     }
 }
- 
 
-@media (max-width: 1280px){
+.footer {
+    padding: 50px 0;
+
+    .footer-flex {
+        display: flex;
+        gap: 150px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    h3 {
+        @include font16;
+        font-weight: 500;
+        color: $secondary-color;
+    }
+
+    ul li a {
+        @include font16;
+        color: #391400;
+        text-decoration: none;
+    }
+
+    ul li a:hover {
+        text-decoration: underline;
+    }
+
+    .about-us h2{
+        font-weight: bold;
+    }
+
+    .social-links {
+        margin-left: auto;
+
+        ul{
+            display: flex;
+            gap: 5px;
+        }
+
+        ul li a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: $secondary-color;
+        }
+
+        
+        ul li a:hover {
+            background-color: $primary-color;
+        }
+    }
+
+    .site-info{
+        display: flex;
+    }
+
+    .important-links{
+        margin-left: auto;
+
+        ul{
+            display: flex;
+            gap: 20px;
+        }
+    }
+}
+
+
+@media (max-width: 1280px) {
     @import "mobile.scss";
 }
