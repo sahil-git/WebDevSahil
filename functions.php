@@ -35,10 +35,15 @@ function webdevsahil_elementor_locations($elementor_theme_manager)
     $elementor_theme_manager->register_all_core_location();
 }
 
-add_action('wp_print_styles', 'wps_deregister_styles', 100);
-function wps_deregister_styles()
-{
-    wp_dequeue_style('wp-block-library');
+
+add_filter('use_block_editor_for_post_type', 'wps_disable_gutenberg_for_post_types', 10, 2);
+function wps_disable_gutenberg_for_post_types($can_edit, $post_type) {
+    $disabled_post_types = array('post', 'page'); 
+    if (in_array($post_type, $disabled_post_types)) {
+        return false;
+    }
+    return $can_edit;
 }
+
 
 ?>
