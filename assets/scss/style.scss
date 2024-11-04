@@ -24,6 +24,11 @@ $container-width: 1440px;
     line-height: 32px;
 }
 
+@mixin font24 {
+    font-size: 24px;
+    line-height: 32px;
+}
+
 @mixin font32 {
     font-size: 20px;
     line-height: 32px;
@@ -47,17 +52,16 @@ p {
     padding: 0;
 }
 
-h1{
+h1 {
     font-size: 72px;
     line-height: 80px;
 }
 
-h2{
-    font-size: 40px;
-    line-height: 48px;
+h2 {
+    @include font24;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
@@ -145,7 +149,7 @@ a{
 
     h3 {
         @include font16;
-        font-weight: 500;
+        font-weight: bold;
         color: $secondary-color;
     }
 
@@ -159,14 +163,14 @@ a{
         text-decoration: underline;
     }
 
-    .about-us h2{
+    .about-us h2 {
         font-weight: bold;
     }
 
     .social-links {
         margin-left: auto;
 
-        ul{
+        ul {
             display: flex;
             gap: 5px;
         }
@@ -181,39 +185,39 @@ a{
             background-color: $secondary-color;
         }
 
-        
+
         ul li a:hover {
             background-color: $primary-color;
         }
     }
 
-    .site-info{
+    .site-info {
         display: flex;
         border-top: 1px solid #F3D1BF;
         align-items: center;
         padding: 50px 0;
     }
 
-    .important-links{
+    .important-links {
         margin-left: auto;
 
-        ul{
+        ul {
             display: flex;
             gap: 20px;
         }
     }
-    
+
 }
 
 
 /* Archive */
-.archive-info{
+.archive-info {
     background-color: $primary-color;
     color: #fff;
     text-align: center;
     padding: 100px 0;
 
-    p{
+    p {
         @include font16;
         color: #FFFFFFA3;
         max-width: 570px;
@@ -221,42 +225,68 @@ a{
     }
 }
 
-.archive-posts{
+.archive-posts {
     padding: 80px 0;
-
-    .posts{
+    .posts {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 30px;
 
-        img{
+        img {
             width: 100%;
-            height: 224px;
+            height: 336px;
+            border-radius: 10px;
             object-fit: cover;
             object-position: center;
         }
+ 
 
-        .post-category a{
-            @include font32;
+        .post-category{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .post-category a {
             color: #391400;
         }
 
-        .post-title{
-            margin-bottom: 14px;
+        .post-title {
+            margin-bottom: 20px;
         }
 
-        .post-title a{
+        .post-title a {
             color: #391400;
         }
 
-        .post-title a:hover, .post-category a:hover{
+        .post-title a:hover,
+        .post-category a:hover {
             text-decoration: underline;
         }
 
-        .post-date{
+        .post-date {
             color: #391400A3;
         }
     }
+}
+
+.nav-links{
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+    span{
+        color: $secondary-color;
+        @include font24;
+    }
+
+    a{
+        @include font24;
+        color: $primary-color;
+    }
+
+    a:hover{
+        color: $secondary-color;
+    }
+    
 }
 
 @media (max-width: 1280px) {
