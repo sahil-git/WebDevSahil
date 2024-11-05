@@ -34,6 +34,75 @@ $container-width: 1440px;
     line-height: 32px;
 }
 
+@mixin font56 {
+    font-size: 56px;
+    line-height: 64px;
+}
+
+@mixin socialLinks($primary-color, $secondary-color) {
+    margin-left: auto;
+    ul {
+        display: flex;
+        gap: 5px;
+    }
+
+    ul li a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 45px;
+        text-align: center;
+        border-radius: 50%;
+        background-color: $secondary-color;
+    }
+
+
+    ul li a:hover {
+        background-color: $primary-color;
+    }
+}
+
+@mixin postsListingStyling(){
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+
+    img {
+        width: 100%;
+        aspect-ratio: 16/9;
+        border-radius: 10px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+
+    .post-category {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .post-category a {
+        color: #391400;
+    }
+
+    .post-title {
+        margin-bottom: 20px;
+    }
+
+    .post-title a {
+        color: #391400;
+    }
+
+    .post-title a:hover,
+    .post-category a:hover {
+        text-decoration: underline;
+    }
+
+    .post-date {
+        color: #391400A3;
+    }
+}
+
 @import "fonts.scss";
 
 body {
@@ -168,27 +237,7 @@ a {
     }
 
     .social-links {
-        margin-left: auto;
-
-        ul {
-            display: flex;
-            gap: 5px;
-        }
-
-        ul li a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            line-height: 45px;
-            text-align: center;
-            border-radius: 50%;
-            background-color: $secondary-color;
-        }
-
-
-        ul li a:hover {
-            background-color: $primary-color;
-        }
+        @include socialLinks($primary-color, $secondary-color);
     }
 
     .site-info {
@@ -227,66 +276,207 @@ a {
 
 .archive-posts {
     padding: 80px 0;
+
     .posts {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-
-        img {
-            width: 100%;
-            height: 336px;
-            border-radius: 10px;
-            object-fit: cover;
-            object-position: center;
-        }
- 
-
-        .post-category{
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-        .post-category a {
-            color: #391400;
-        }
-
-        .post-title {
-            margin-bottom: 20px;
-        }
-
-        .post-title a {
-            color: #391400;
-        }
-
-        .post-title a:hover,
-        .post-category a:hover {
-            text-decoration: underline;
-        }
-
-        .post-date {
-            color: #391400A3;
-        }
+       @include postsListingStyling();
     }
 }
 
-.nav-links{
+.nav-links {
     gap: 20px;
     display: flex;
     justify-content: center;
     margin: 50px 0;
-    span{
+
+    span {
         color: $secondary-color;
         @include font24;
     }
 
-    a{
+    a {
         @include font24;
         color: $primary-color;
     }
 
-    a:hover{
+    a:hover {
         color: $secondary-color;
     }
-    
+
+}
+
+/* Single Post */
+body.single-post {
+
+    main {
+        margin: 40px 0;
+
+        .wds-container {
+            max-width: 800px;
+        }
+
+        .back-to-blog-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            svg {
+                transition: all 0.5s ease;
+            }
+
+            a {
+                font-size: 12px;
+                font-weight: bold;
+                color: #391400;
+                text-transform: uppercase;
+            }
+
+        }
+
+        .back-to-blog-wrapper:hover {
+            svg {
+                transform: translateX(-5px);
+            }
+        }
+
+        h1 {
+            @include font56;
+            margin: 40px 0;
+            color: #391400;
+        }
+
+        .single-post-meta {
+            display: flex;
+            justify-content: space-between;
+
+            p {
+                color: #391400A3;
+
+                a,
+                span {
+                    color: #391400;
+                }
+
+                a:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .single-post-thumbnail {
+            max-width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            object-position: center;
+            margin: 70px 0;
+        }
+
+        .main-content {
+            h2 {
+                @include font24;
+                font-weight: bold;
+                margin-bottom: 24px;
+                margin-top: 48px;
+            }
+
+            p {
+                color: #391400A3;
+                @include font16;
+            }
+
+            ul li,
+            ol li {
+                @include font16;
+                color: #391400;
+            }
+
+            ul li::marker {
+                color: $secondary-color;
+            }
+
+            blockquote{
+                position: relative;
+                padding-left: 100px;
+                max-width: 426px;
+                margin: 100px 0;
+                p{
+                    color: #391400;
+                    @include font20;    
+                }
+            }
+
+            /* Add SVG as Background Icon */
+            blockquote::before {
+                content: '';
+                position: absolute;
+                top: 10px;
+                left: 20px;
+                width: 48px;
+                height: 36px;
+                background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="48" height="36" viewBox="0 0 48 36"%3E%3Cpath id="Shape" d="M26,23.45C26,13.168,33.784,2.412,46,0l1.968,4.252c-4.43,1.67-8.326,7.484-8.761,11.492A10.426,10.426,0,0,1,48,26.042C48,32.406,42.832,36,37.6,36,31.572,36,26,31.39,26,23.45Zm-26,0C0,13.168,7.784,2.412,20,0l1.968,4.252c-4.43,1.67-8.326,7.484-8.76,11.492A10.426,10.426,0,0,1,22,26.042C22,32.406,16.832,36,11.6,36,5.572,36,0,31.39,0,23.45Z" fill="%23ef6d58"/%3E%3C/svg%3E');
+                background-size: cover;
+            }
+
+        }
+
+
+        .excerpt {
+            p {
+                @include font20;
+                color: #391400;
+                margin-bottom: 32px;
+            }
+        }
+
+        .author-meta{
+            margin: 100px 0;
+            display: flex;
+            justify-content: space-between;
+
+            .author-info{
+                display: flex;
+                align-items: center;
+                gap: 25px;
+
+                p{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                    span{
+                        color: #391400A3;
+                    }
+                }
+                
+
+                a{
+                    color: #391400;
+                }
+
+                img{
+                    border-radius: 50%;
+                }
+            }
+            
+            .social-links{
+                @include socialLinks($primary-color, $secondary-color);
+                ul{
+                    list-style: none;
+                }
+            }
+        }
+    }
+
+    .related-articles{
+        margin-bottom: 100px;
+
+        h2{
+            margin-bottom: 40px;
+        }
+
+        .related-articles-grid{
+            display: grid;
+            @include postsListingStyling();
+        }
+    }
 }
 
 @media (max-width: 1280px) {
