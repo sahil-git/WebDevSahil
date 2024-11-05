@@ -34,6 +34,11 @@ $container-width: 1440px;
     line-height: 32px;
 }
 
+@mixin font40 {
+    font-size: 40px;
+    line-height: 48px;
+}
+
 @mixin font56 {
     font-size: 56px;
     line-height: 64px;
@@ -64,7 +69,7 @@ $container-width: 1440px;
 
 @mixin postsListingStyling(){
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit,minmax(min-content,430px));
     gap: 30px;
 
     img {

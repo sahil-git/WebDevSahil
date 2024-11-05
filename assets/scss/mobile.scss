@@ -149,6 +149,9 @@ h2{
 
 body.single-post {
     main {
+        h1{
+            @include font40;
+        }
         .back-to-blog{
             font-size: 12px;
         }
