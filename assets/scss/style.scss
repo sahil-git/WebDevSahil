@@ -12,7 +12,12 @@ $primary-color: #28293E;
 $secondary-color: #EF6D58;
 $tertiary-color: #FDF0E9;
 
-$container-width: 1440px;
+$container-width: 1170px;
+$max-width: 1440px;
+
+
+@import "fonts.scss";
+
 
 @mixin font16 {
     font-size: 16px;
@@ -30,7 +35,7 @@ $container-width: 1440px;
 }
 
 @mixin font32 {
-    font-size: 20px;
+    font-size: 32px;
     line-height: 32px;
 }
 
@@ -44,8 +49,14 @@ $container-width: 1440px;
     line-height: 64px;
 }
 
+@mixin font72 {
+    font-size: 72px;
+    line-height: 80px;
+}
+
 @mixin socialLinks($primary-color, $secondary-color) {
     margin-left: auto;
+
     ul {
         display: flex;
         gap: 5px;
@@ -67,9 +78,9 @@ $container-width: 1440px;
     }
 }
 
-@mixin postsListingStyling(){
+@mixin postsListingStyling() {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(min-content,430px));
+    grid-template-columns: repeat(auto-fit, minmax(min-content, 430px));
     gap: 30px;
 
     img {
@@ -108,7 +119,6 @@ $container-width: 1440px;
     }
 }
 
-@import "fonts.scss";
 
 body {
     background-color: $tertiary-color;
@@ -147,10 +157,50 @@ a {
     padding: 0 25px;
 }
 
+
+/* Buttons */
+
+.orange-btn,
+.white-btn-o {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+}
+
+.white-btn-o {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.white-btn-o:hover {
+    background-color: $secondary-color;
+    border: 1px solid $secondary-color;
+}
+
+.orange-btn {
+    background-color: $secondary-color;
+    border: 1px solid $secondary-color;
+    color: #fff;
+}
+
+.orange-btn:hover {
+    background-color: $primary-color;
+    color: $tertiary-color;
+    border-color: $tertiary-color;
+
+}
+
 .header {
     background-color: $primary-color;
     padding-top: 16px;
     padding-bottom: 16px;
+    border-bottom: 1px solid $secondary-color;
 
     .site-branding {
         img {
@@ -283,7 +333,7 @@ a {
     padding: 80px 0;
 
     .posts {
-       @include postsListingStyling();
+        @include postsListingStyling();
     }
 }
 
@@ -398,14 +448,15 @@ body.single-post {
                 color: $secondary-color;
             }
 
-            blockquote{
+            blockquote {
                 position: relative;
                 padding-left: 100px;
                 max-width: 426px;
                 margin: 100px 0;
-                p{
+
+                p {
                     color: #391400;
-                    @include font20;    
+                    @include font20;
                 }
             }
 
@@ -432,58 +483,278 @@ body.single-post {
             }
         }
 
-        .author-meta{
+        .author-meta {
             margin: 100px 0;
             display: flex;
             justify-content: space-between;
 
-            .author-info{
+            .author-info {
                 display: flex;
                 align-items: center;
                 gap: 25px;
 
-                p{
+                p {
                     display: flex;
                     flex-direction: column;
                     gap: 15px;
-                    span{
+
+                    span {
                         color: #391400A3;
                     }
                 }
-                
 
-                a{
+
+                a {
                     color: #391400;
                 }
 
-                img{
+                img {
                     border-radius: 50%;
                 }
             }
-            
-            .social-links{
+
+            .social-links {
                 @include socialLinks($primary-color, $secondary-color);
-                ul{
+
+                ul {
                     list-style: none;
                 }
             }
         }
     }
 
-    .related-articles{
+    .related-articles {
         margin-bottom: 100px;
 
-        h2{
+        h2 {
             margin-bottom: 40px;
         }
 
-        .related-articles-grid{
+        .related-articles-grid {
             display: grid;
             @include postsListingStyling();
         }
     }
 }
 
-@media (max-width: 1280px) {
+/* Landing Page */
+.page-template-front-page {
+    h2 {
+        @include font56;
+    }
+
+    .introductory-text {
+        text-transform: uppercase;
+        color: $secondary-color;
+        @include font16;
+    }
+
+    main.site-main {
+        background: $primary-color;
+        color: #fff;
+        padding: 100px 0;
+
+        .professional-name {
+            @include font16;
+            text-transform: uppercase;
+            color: $secondary-color;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            @include font72;
+            font-weight: 800;
+        }
+
+        .grey-text {
+            color: #B1B1B9;
+        }
+
+        .hero-description {
+            @include font16;
+            margin-bottom: 50px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+
+            .hero-image {
+                text-align: right;
+
+                img {
+                    width: 100%;
+                    max-width: 570px;
+                }
+            }
+        }
+    }
+
+    .services {
+        padding: 100px 0;
+
+        h2 {
+            color: $primary-color;
+            margin-top: 50px;
+        }
+
+        .section-details {
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 50px 0;
+
+            .service-item {
+                outline: 1px solid #F3D1BF;
+                padding: 50px;
+
+                .service-info {
+                    display: flex;
+                    gap: 25px;
+                    align-items: center;
+
+                    .service-title {
+                        @include font24;
+                        font-weight: bold;
+                    }
+                }
+
+                .service-description {
+                    color: #7F6454;
+                    margin: 30px 0;
+                }
+
+                .service-cta {
+                    color: $primary-color;
+                    display: inline-block;
+
+                    span {
+                        background: #fff;
+                        color: $secondary-color;
+                        @include font32;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        transition: all 0.5s ease;
+                        margin-right: 15px;
+                    }
+
+                    a {
+                        color: $primary-color;
+                    }
+                }
+
+                .service-cta:hover {
+                    span {
+                        background: $primary-color;
+                        color: #fff;
+                    }
+
+                    a {
+                        text-decoration: underline;
+                    }
+                }
+
+
+            }
+        }
+
+        .want-more-services {
+            text-align: center;
+            color: #7F6454;
+
+            a {
+                color: $primary-color;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .portfolio {
+        background: $primary-color;
+        padding: 100px 0;
+        color: #fff;
+
+        .introductory-text {
+            margin-bottom: 30px;
+        }
+
+        .inline-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+        .portfolio-grid:hover{
+            .portfolio-item{
+                filter: blur(5px);
+            }
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            width: 100%;
+            max-width: $max-width;
+            margin: 0 auto;
+            justify-content: center;
+            margin-top: 55px;
+
+            .portfolio-item {
+                filter: none;
+                transition: filter 0.3s ease;
+
+                outline: 1px solid #3A3C56;
+                position: relative;
+                padding: 20px;
+
+                img {
+                    width: 100%;
+                }
+
+                .info {
+                    position: absolute;
+                    bottom: 50px;
+                    left: 50px;
+
+                    .category {
+                        @include font16;
+                        color: $primary-color;
+                        background: #fff;
+                        padding: 5px 20px;
+                        border-radius: 20px;
+                        margin-bottom: 35px;
+                        text-align: center;
+                        display: inline-block;
+                    }
+
+                    a {
+                        @include font40;
+                        color: #fff;
+                        text-transform: uppercase;
+                        display: block;
+                    }
+                }
+            }
+
+            .portfolio-item:hover {
+                filter: none;
+            }
+       }
+    }
+}
+
+@media (max-width: 1060px) {
     @import "mobile.scss";
 }

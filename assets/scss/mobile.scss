@@ -190,3 +190,41 @@ body.single-post {
         }
     }
 }
+
+.page-template-front-page{
+    h1{
+        @include font56;
+    }
+
+    h2{
+        @include font40;
+    }
+
+    main.site-main{
+        .hero-grid{
+           grid-template-columns: 1fr;
+
+           .hero-image{
+                text-align: left;
+                order: -1;
+           }
+        }
+
+    }
+
+    
+    .services{
+        .services-grid{
+            grid-template-columns: 1fr;
+        }
+    }
+
+    
+    .portfolio {
+        .portfolio-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+
