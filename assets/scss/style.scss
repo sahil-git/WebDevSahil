@@ -1044,6 +1044,43 @@ body.single-post {
             flex-wrap: wrap;
         }
     }
+
+    .our-blog {
+        margin: 100px 0;
+
+        .inline-flex {
+            display: flex;
+            justify-content: space-between;
+            margin: 50px 0;
+
+            a {
+                display: inline-block;
+            }
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: 
+            "first first second"
+            "first first second";
+            gap: 20px;
+
+            article:first-child{
+                grid-area: first;
+            }
+
+
+            img {
+                aspect-ratio: 16 / 9;
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                object-position: center;
+            }
+            
+        }
+    }
 }
 
 @media (max-width: 1060px) {

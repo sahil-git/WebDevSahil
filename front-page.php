@@ -266,31 +266,41 @@ get_header();
 <section class="our-blog">
     <div class="wds-container">
 
-        <p class="introductory-text">FAQ</p>
+        <p class="introductory-text">OUR BLOG</p>
         <div class="inline-flex">
             <h2>Latest Blog Articles</h2>
-            <a href="#" class="white-btn">Discover All</a>
+            <div class="cta-btn">
+                <a href="#" class="white-btn">Discover All</a>
+            </div>
         </div>
 
         <div class="blog-grid">
-            <article>
-                <img src="#" alt="thumbnail" />
-                <p class="category">Stories</p>
-                <h3>Agency is a business</h3>
-                <p class="date"></p>
+            <?php
+                $args = array(
+                    'posts_per_page' => 3,
+                    'orderby' => 'date',
+                    'order' => 'DESC',
+                );
+                $latest_posts = new WP_Query($args);
+                if ($latest_posts->have_posts()):
+                    while ($latest_posts->have_posts()):
+                        $latest_posts->the_post();
+            ?>
+            <article class="blog-item">
+                <?php if (has_post_thumbnail()): ?>
+                    <a href="<?php the_permalink(); ?>" class="thumbnail-link"><?php the_post_thumbnail('medium'); ?></a>
+                <?php endif; ?>
+                <div class="content-wrapper">
+                    <p class="category">Stories</p>
+                    <h3 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                    <p class="date"><?php echo get_the_date(); ?></p>
+                </div>
             </article>
-            <article>
-                <img src="#" alt="thumbnail" />
-                <p class="category">Stories</p>
-                <h3>Agency is a business</h3>
-                <p class="date"></p>
-            </article>
-            <article>
-                <img src="#" alt="thumbnail" />
-                <p class="category">Stories</p>
-                <h3>Agency is a business</h3>
-                <p class="date"></p>
-            </article>
+            <?php
+                    endwhile;
+                    wp_reset_postdata();
+                endif;
+            ?>
         </div>
 
         <div class="newsletter">
