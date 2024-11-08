@@ -92,25 +92,26 @@ get_header();
 <section class="about-me">
     <div class="wds-container">
         <div class="grid">
-            <img src="#" alt="Artwork for about me section" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/landing/about-art.png" aria-label="Design Icon" />
             <div class="about-info">
                 <p class="introductory-text">Sahil Sharma</p>
-                <h2>Professional Web Designer</h2>
-                <p class="description"></p>
+                <h2>Professional<Br />Web Designer</h2>
+                <p class="subtitle">Provides a full service range</p>
+                <p class="description">Ability to put themselves in the merchant's shoes. It is meant to partner on the long run, and work as an extension of the merchant's team.</p>
                 <a href="#" class="white-btn about-cta" aria-label="Find out more about Sahil.">ABOUT ME</a>
             </div>
         </div>
         <div class="stats-grid">
             <div class="stat">
-                <img src="#" alt="Calendar icon" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/calendar-icon.png" aria-label="Design Icon" />
                 <div class="stat-meta">
                     <p class="stat-value">10</p>
                     <p class="stat-label">Years of experience</p>
                 </div>
             </div>
             <div class="stat">
-                <img src="#" alt="Briefcase icon" />
-                <div class="stat-meta">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/briefcase-icon.png" aria-label="Design Icon" />
+            <div class="stat-meta">
                     <p class="stat-value">150+</p>
                     <p class="stat-label">Projects Done</p>
                 </div>
@@ -127,12 +128,12 @@ get_header();
                 <h2>Give your site a new look</h2>
                 <p class="description">Service range including technical skills, design, business understanding.</p>
                 <ul class="wds-ul">
-                    <li>Range including technical skills</li>
-                    <li>Range including technical skills</li>
-                    <li>Range including technical skills</li>
+                    <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/check.png" aria-label="Design Icon" />Range including technical skills</li>
+                    <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/check.png" aria-label="Design Icon" />Range including technical skills</li>
+                    <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/check.png" aria-label="Design Icon" />Range including technical skills</li>
                 </ul>
             </div>
-            <img src="#" alt="Art work for features section"/>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/landing/features.png" aria-label="Features Artwork" />
         </div>
     </div>
 </section>
@@ -141,7 +142,7 @@ get_header();
     <div class="wds-container">
         <div class="get-strated-grid">
             <div class="grid-item">
-                <img src="#" alt="Gift icon" />
+                <img class="gift-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/landing/gift.png" alt="Gift icon" />
                 <p class="introductory-text">Get Started</p>
                 <h2>I Help Companies Move Faster</h2>
                 <a href="#" aria-label="Contact sahil sharma" class="orange-btn">Contact me</a>
@@ -149,7 +150,7 @@ get_header();
             <div class="grid-item">
                 <p class="testimonial">Put themselves in the merchant's shoes. It is meant to partner on the long run.</p>
             </div>
-            <img src="#" alt="Artwork for getting started"/>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/landing/gift-artwork.png" alt="Gift icon" />
         </div>
     </div>
 </section>
@@ -161,34 +162,72 @@ get_header();
             <h2>What My Clients Saying</h2>
         </div>
         <div class="testimonials-grid">
-            <div class="stars">
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
+        <div class="item">
+                <div class="stars">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/star.png" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/star.png" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/star.png" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/star.png" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/star.png" />
+                </div>
+                <p class="testimonial-detailed">A digital agency is a business you hire to outsource your digital marketing efforts, instead of handling in-house. They can provide your business with a variety of digital solutions.</p>
+                <div class="client-info">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/landing/user-icon.png" alt="IUser icon" />
+                    <div class="client-detail">
+                        <p class="name">Alan Marti</p>
+                        <p class="company">Meta Inc.</p>
+                    </div>
+                </div>
             </div>
-            <p class="testimonial-detailed"></p>
-            <div class="client-info">
-                <img src="#" alt="Client's photo" />
-                <div class="client-detail">
-                    <p class="name">Alan Marti</p>
-                    <p class="company">Meta Inc.</p>
+            <div class="item">
+                <div class="stars">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/star.png" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/star.png" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/star.png" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/star.png" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/star.png" />
+                </div>
+                <p class="testimonial-detailed">A digital agency is a business you hire to outsource your digital marketing efforts, instead of handling in-house. They can provide your business with a variety of digital solutions.</p>
+                <div class="client-info">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/landing/user-icon.png" alt="IUser icon" />
+                    <div class="client-detail">
+                        <p class="name">Alan Marti</p>
+                        <p class="company">Meta Inc.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="stars">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/star.png" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/star.png" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/star.png" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/star.png" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/star.png" />
+                </div>
+                <p class="testimonial-detailed">A digital agency is a business you hire to outsource your digital marketing efforts, instead of handling in-house. They can provide your business with a variety of digital solutions.</p>
+                <div class="client-info">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/landing/user-icon.png" alt="IUser icon" />
+                    <div class="client-detail">
+                        <p class="name">Alan Marti</p>
+                        <p class="company">Meta Inc.</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <a href="#" class="white-btn">See All</a>
+        <div class="text-center">
+            <a href="#" class="white-btn">See All</a>
+        </div>
     </div>
 </section>
 
 <section class="faq">
     <div class="wds-container">
         <div class="faq-grid">
-        <div class="grid-item">
+            <div class="grid-item">
                 <p class="introductory-text">FAQ</p>
                 <h2>Frequently Asked Questions</h2>
                 <p class="description">A digital agency is a business you hire to outsource your digital marketing efforts, instead of handling in-house.</p>
-                <a href="#" class="contact-me-btn">Contact Me</a>
+                <a href="#" class="white-btn contact-me-btn">Contact Me</a>
             </div>
             <div class="grid-item">
                 <div class="faq-accordion">
@@ -214,15 +253,13 @@ get_header();
                     </div>
                 </div>
             </div>
-            <div class="brands">
-                <img src="#" alt="Brand name"/>
-                <img src="#" alt="Brand name"/>
-                <img src="#" alt="Brand name"/>
-                <img src="#" alt="Brand name"/>
-                <img src="#" alt="Brand name"/>
-                <img src="#" alt="Brand name"/>
-            </div>
         </div>
+        <div class="brands">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/landing/brand1.png" alt="IUser icon" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/landing/brand1.png" alt="IUser icon" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/landing/brand1.png" alt="IUser icon" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/landing/brand1.png" alt="IUser icon" />
+            </div>
     </div>
 </section>
 

@@ -149,6 +149,10 @@ a {
     text-decoration: none;
 }
 
+.text-center {
+    text-align: center;
+}
+
 .wds-container {
     box-sizing: border-box;
     width: 100%;
@@ -161,6 +165,7 @@ a {
 /* Buttons */
 
 .orange-btn,
+.white-btn,
 .white-btn-o {
     display: inline-block;
     font-size: 14px;
@@ -170,6 +175,18 @@ a {
     font-weight: bold;
     text-transform: uppercase;
     transition: all 0.5s ease;
+}
+
+.white-btn {
+    background: #fff;
+    color: $primary-color;
+    border: 1px solid #fff;
+}
+
+.white-btn:hover {
+    background: $primary-color;
+    color: #fff;
+    border-color: $primary-color;
 }
 
 .white-btn-o {
@@ -696,8 +713,8 @@ body.single-post {
 
         }
 
-        .portfolio-grid:hover{
-            .portfolio-item{
+        .portfolio-grid:hover {
+            .portfolio-item {
                 filter: blur(5px);
             }
         }
@@ -751,7 +768,281 @@ body.single-post {
             .portfolio-item:hover {
                 filter: none;
             }
-       }
+        }
+    }
+
+    .about-me {
+        padding: 100px 0;
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 170px;
+
+            h2 {
+                margin-top: 50px;
+            }
+
+            .subtitle {
+                margin: 20px 0;
+                @include font20;
+            }
+
+            .description {
+                color: #7F6454;
+                margin-bottom: 30px;
+                @include font16;
+            }
+
+            img {
+                width: 100%;
+                max-width: 528px;
+            }
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+
+            .stat {
+                outline: 1px solid #F3D1BF;
+                padding: 30px;
+                display: flex;
+                align-items: center;
+                gap: 25px;
+
+                img {
+                    max-width: 100px;
+                    width: 100%;
+                }
+
+                .stat-value {
+                    @include font40;
+                    font-weight: 800;
+                }
+
+                .stat-label {
+                    @include font20;
+                }
+            }
+
+        }
+    }
+
+
+    .features {
+        padding: 100px 0;
+        background: $primary-color;
+        color: #fff;
+
+        .introductory-text {
+            margin-bottom: 45px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+        }
+
+        .description {
+            @include font20;
+        }
+
+        .wds-ul {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+
+            li {
+                display: flex;
+                align-items: center;
+
+                img {
+                    margin-right: 15px;
+                }
+            }
+
+            li:not(:last-child) {
+                margin-bottom: 15px;
+            }
+        }
+
+    }
+
+    .get-strated-section {
+        position: relative;
+        padding: 60px 0;
+        background-color: #F9E5DA;
+
+        h2 {
+            @include font24;
+            margin: 20px 0;
+        }
+
+        .gift-icon {
+            position: absolute;
+            top: -80px;
+        }
+
+        .get-strated-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: center;
+        }
+
+        .testimonial {
+            color: #7F6454;
+        }
+    }
+
+    .testimonials {
+        padding: 100px 0;
+
+        h2 {
+            margin-top: 50px;
+        }
+
+        .section-info {
+            text-align: center;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin-top: 50px;
+
+            .item {
+                outline: 1px solid #F3D1BF;
+                padding: 50px;
+
+                .testimonial-detailed {
+                    margin-top: 30px;
+                    margin-bottom: 60px;
+                }
+            }
+
+            .item:nth-child(2) {
+                background-color: #fff;
+                transform: scale(1.1);
+            }
+
+            .client-info {
+                display: flex;
+                align-items: center;
+                gap: 24px;
+            }
+
+            .client-detail {
+                .name {
+                    @include font24;
+                    font-weight: bold;
+                }
+
+                .company {
+                    @include font16;
+                }
+            }
+        }
+
+        .white-btn {
+            margin-top: 64px;
+        }
+    }
+
+    .faq {
+        padding: 100px 0;
+        color: #fff;
+        background: $primary-color;
+
+        h2 {
+            margin: 35px 0 25px 0;
+        }
+
+        .contact-me-btn {
+            margin-top: 30px;
+            display: inline-block;
+            border: 1px solid #fff;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            .faq-accordion {
+                ul {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+
+                    li {
+                        outline: 1px solid #2F3048;
+                        color: #fff;
+                        padding: 45px;
+
+                        .faq-title {
+                            @include font24;
+                            font-weight: bold;
+                            display: flex;
+                            justify-content: space-between;
+                            cursor: pointer;
+                        }
+
+                        .faq-title::after {
+                            content: "▲";
+                            background: $secondary-color;
+                            display: flex;
+                            width: 40px;
+                            height: 40px;
+                            align-items: center;
+                            justify-content: center;
+                            border-radius: 50%;
+                            font-size: 16px;
+                            color: #fff;
+                        }
+
+                        .faq-description {
+                            display: none;
+                            @include font16;
+                            opacity: .6;
+                            margin-top: 25px;
+                        }
+
+                    }
+
+                    li.active {
+                        background: #fff;
+                        color: #000;
+
+                        .faq-description {
+                            display: block;
+                        }
+
+                        .faq-title::after {
+                            content: "\25BC";
+                        }
+                    }
+
+                    li:first-of-type {
+                        border-radius: 10px 10px 0 0;
+                    }
+
+                    li:last-of-type {
+                        border-radius: 0 0 10px 10px;
+                    }
+
+                }
+            }
+        }
+
+        .brands {
+            display: flex;
+            gap: 140px;
+            margin-top: 100px;
+            flex-wrap: wrap;
+        }
     }
 }
 
