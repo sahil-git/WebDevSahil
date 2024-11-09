@@ -133,7 +133,7 @@ get_header();
                     <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/check.png" aria-label="Design Icon" />Range including technical skills</li>
                 </ul>
             </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/landing/features.png" aria-label="Features Artwork" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/landing/features.png" aria-label="Features Artwork" class="feature-artwork" />
         </div>
     </div>
 </section>
@@ -306,10 +306,12 @@ get_header();
         <div class="newsletter">
             <div class="info">
                 <strong>Newsletter</strong>
-                <p class="description"></p>
+                <p class="description">A digital agency is a business you hire to outsource</p>
             </div>
-            <input type="email" class="email-newsletter"  />
-            <button class="white-btn">SUBSCRIBE</button>
+            <div class="form">
+                <input type="email" class="email-newsletter"  />
+                <button class="white-btn">SUBSCRIBE</button>
+            </div>
         </div>
     </div>
 </section>
@@ -318,21 +320,28 @@ get_header();
     <div class="wds-container">
         <div class="get-in-touch-grid">
             <div class="contact-form">
+                <h3>Get In Touch</h3>
+                <form>
+                    <input type="email" placeholder="john-doe@gmail.com" />
+                    <input type="text" placeholder="subject" />
+                    <textarea rows=3 cols=3 placeholder="Your Message"></textarea>
+                    <button class="orange-btn">SUBMIT NOW</button>
+                </form>
             </div>
             <div class="contact-info">
                 <p class="introductory-text">Contact</p>
                 <h2>Contact Me</h2>
                 <p class="description">A digital agency is a business you hire to outsource your digital marketing efforts, instead of handling in-house.</p>
-                <div class="contact-point">
-                    <img src="#" alt="Contact Icon" />
+                <div class="contact-point" alt="Contact Icon" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/group-icon.png" />
                     <p class="detail">2247 Lunetta Street, TX 76301</p>
                 </div>
                 <div class="contact-point">
-                    <img src="#" alt="Contact Icon" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/phone-icon.png" alt="Contact Icon" />
                     <p class="detail">+1 (234) 567-89-00</p>
                 </div>
                 <div class="contact-point">
-                    <img src="#" alt="Contact Icon" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/mail-icon.png" alt="Contact Icon" />
                     <p class="detail">info@agency.com</p>
                 </div>
             </div>

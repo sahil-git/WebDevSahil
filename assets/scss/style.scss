@@ -16,9 +16,18 @@ $container-width: 1170px;
 $max-width: 1440px;
 
 
+
+:root {
+    --section-padding: 100px 0;
+}
+
 @import "fonts.scss";
 
 
+@mixin font14 {
+    font-size: 14px;
+    line-height: 14px;
+}
 @mixin font16 {
     font-size: 16px;
     line-height: 32px;
@@ -168,8 +177,7 @@ a {
 .white-btn,
 .white-btn-o {
     display: inline-block;
-    font-size: 14px;
-    line-height: 1;
+    @include font14;
     padding: 15px 30px;
     border-radius: 5px;
     font-weight: bold;
@@ -336,7 +344,7 @@ a {
     background-color: $primary-color;
     color: #fff;
     text-align: center;
-    padding: 100px 0;
+    padding: var(--section-padding);
 
     p {
         @include font16;
@@ -569,7 +577,7 @@ body.single-post {
     main.site-main {
         background: $primary-color;
         color: #fff;
-        padding: 100px 0;
+        padding: var(--section-padding);
 
         .professional-name {
             @include font16;
@@ -609,7 +617,7 @@ body.single-post {
     }
 
     .services {
-        padding: 100px 0;
+        padding: var(--section-padding);
 
         h2 {
             color: $primary-color;
@@ -665,6 +673,8 @@ body.single-post {
 
                     a {
                         color: $primary-color;
+                        display:flex;
+                        align-items: center;
                     }
                 }
 
@@ -699,7 +709,7 @@ body.single-post {
 
     .portfolio {
         background: $primary-color;
-        padding: 100px 0;
+        padding: var(--section-padding);
         color: #fff;
 
         .introductory-text {
@@ -710,6 +720,7 @@ body.single-post {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            @include font14;
 
         }
 
@@ -772,7 +783,7 @@ body.single-post {
     }
 
     .about-me {
-        padding: 100px 0;
+        padding: var(--section-padding);
 
         .grid {
             display: grid;
@@ -833,7 +844,7 @@ body.single-post {
 
 
     .features {
-        padding: 100px 0;
+        padding: var(--section-padding);
         background: $primary-color;
         color: #fff;
 
@@ -845,6 +856,10 @@ body.single-post {
             display: grid;
             grid-template-columns: 1fr 1fr;
             align-items: center;
+
+            .feature-artwork{
+                width: 100%;
+            }
         }
 
         .description {
@@ -899,7 +914,7 @@ body.single-post {
     }
 
     .testimonials {
-        padding: 100px 0;
+        padding: var(--section-padding);
 
         h2 {
             margin-top: 50px;
@@ -953,7 +968,7 @@ body.single-post {
     }
 
     .faq {
-        padding: 100px 0;
+        padding: var(--section-padding);
         color: #fff;
         background: $primary-color;
 
@@ -1060,11 +1075,14 @@ body.single-post {
 
         .blog-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 35% 35% 30%;
             grid-template-areas: 
             "first first second"
             "first first second";
             gap: 20px;
+
+            border-bottom: 1px solid #F3D1BF;
+            padding-bottom: 80px;
 
             article:first-child{
                 grid-area: first;
@@ -1078,7 +1096,129 @@ body.single-post {
                 object-fit: cover;
                 object-position: center;
             }
+
+            .category{
+                @include font20;
+            }
+
+            a{
+                color: $primary-color;
+            }
+
+            a:hover{
+                text-decoration: underline;
+            }
             
+            article:first-child{
+                h3{
+                    @include font40;
+                }
+            }
+            
+            article:not(:first-child){
+                h3{
+                    @include font24;
+                }
+            }
+
+            .date{
+                @include font16;
+                color: #7F6454
+            }
+        }
+    }
+
+    .newsletter{
+        margin: 100px 0;
+        display: flex;
+        justify-content: space-between;
+
+        .info{
+            strong{
+                @include font24;
+                font-weight: bold;
+            }
+
+            p{
+                color: #7F6454;
+            }
+        }
+
+        .form{
+            .email-newsletter{
+                width: 370px;
+                display: inline-block;
+            }
+
+            input{
+                padding: 15px;
+                border: 1px solid #F3D1BF;
+                border-radius: 6px;
+            }
+
+            .white-btn{
+                display: inline-block;
+            }
+        }
+    }
+}
+
+.get-in-touch{
+    background: $primary-color;
+    color: #fff;
+    padding: var(--section-padding);
+
+    .get-in-touch-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 130px;
+
+        h2{
+            margin-top: 40px;
+        }
+
+        h3{
+            color: $primary-color;
+        } 
+
+        .description{
+            color: #B1B1B9;
+            margin: 20px 0;
+        }
+
+        .contact-form{
+            background: #fff;
+            padding: 48px;   
+            position: relative;
+
+            form{
+                width: 100%;
+                text-align: right;
+            }
+
+            input,textarea{
+                display: block;
+                box-sizing: border-box;
+                padding: 15px;
+                width: 100%;
+                margin: 0;
+                border: 1px solid #F3D1BF;
+                margin-top: 15px;
+            }
+
+            .orange-btn{
+                margin-top: 15px;
+            }
+        }
+
+        .contact-point{
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .contact-point:not(:last-child){
+            margin-bottom: 15px;
         }
     }
 }
