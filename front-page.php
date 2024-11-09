@@ -159,7 +159,7 @@ get_header();
     <div class="wds-container">
         <div class="section-info">
             <p class="introductory-text">Testimonials</p>
-            <h2>What My Clients Saying</h2>
+            <h2>What My<br /> Clients Saying</h2>
         </div>
         <div class="testimonials-grid">
         <div class="item">

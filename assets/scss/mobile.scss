@@ -276,6 +276,10 @@ body.single-post {
     }
 
     .get-strated-section {
+        .introductory-text{
+            margin-top: 20px;
+        }
+        
         .get-strated-grid {
             grid-template-columns: 1fr;
             gap: 40px;

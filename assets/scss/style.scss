@@ -12,6 +12,8 @@ $primary-color: #28293E;
 $secondary-color: #EF6D58;
 $tertiary-color: #FDF0E9;
 
+$text-black: #391400;
+
 $container-width: 1170px;
 $max-width: 1440px;
 
@@ -89,7 +91,7 @@ $max-width: 1440px;
 
 @mixin postsListingStyling() {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min-content, 430px));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 
     img {
@@ -143,6 +145,11 @@ h5,
 p {
     margin: 0;
     padding: 0;
+    color: $text-black
+}
+
+h1{
+    color :#fff;
 }
 
 h1 {
@@ -564,14 +571,19 @@ body.single-post {
 
 /* Landing Page */
 .page-template-front-page {
+    h1{
+        color: #fff;
+    }
+
     h2 {
         @include font56;
     }
 
     .introductory-text {
+        @include font16;
         text-transform: uppercase;
         color: $secondary-color;
-        @include font16;
+        letter-spacing: 1.875px;
     }
 
     main.site-main {
@@ -620,7 +632,6 @@ body.single-post {
         padding: var(--section-padding);
 
         h2 {
-            color: $primary-color;
             margin-top: 50px;
         }
 
@@ -651,6 +662,7 @@ body.single-post {
                 .service-description {
                     color: #7F6454;
                     margin: 30px 0;
+                    @include font16;
                 }
 
                 .service-cta {
@@ -683,10 +695,6 @@ body.single-post {
                         background: $primary-color;
                         color: #fff;
                     }
-
-                    a {
-                        text-decoration: underline;
-                    }
                 }
 
 
@@ -711,6 +719,10 @@ body.single-post {
         background: $primary-color;
         padding: var(--section-padding);
         color: #fff;
+
+        h2{
+            color: #fff;
+        }
 
         .introductory-text {
             margin-bottom: 30px;
@@ -760,7 +772,7 @@ body.single-post {
                         @include font16;
                         color: $primary-color;
                         background: #fff;
-                        padding: 5px 20px;
+                        padding: 0 20px;
                         border-radius: 20px;
                         margin-bottom: 35px;
                         text-align: center;
@@ -772,6 +784,7 @@ body.single-post {
                         color: #fff;
                         text-transform: uppercase;
                         display: block;
+                        font-weight: 800;
                     }
                 }
             }
@@ -796,7 +809,7 @@ body.single-post {
             }
 
             .subtitle {
-                margin: 20px 0;
+                margin: 10px 0;
                 @include font20;
             }
 
@@ -815,7 +828,7 @@ body.single-post {
         .stats-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-
+            margin-top: 100px;
 
             .stat {
                 outline: 1px solid #F3D1BF;
@@ -848,6 +861,10 @@ body.single-post {
         background: $primary-color;
         color: #fff;
 
+        h2{
+            color:#fff;
+        }
+
         .introductory-text {
             margin-bottom: 45px;
         }
@@ -864,6 +881,7 @@ body.single-post {
 
         .description {
             @include font20;
+            color: #fff;
         }
 
         .wds-ul {
@@ -910,6 +928,7 @@ body.single-post {
 
         .testimonial {
             color: #7F6454;
+            @include font16;
         }
     }
 
@@ -927,7 +946,7 @@ body.single-post {
         .testimonials-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            margin-top: 50px;
+            margin-top: 55px;
 
             .item {
                 outline: 1px solid #F3D1BF;
@@ -936,6 +955,8 @@ body.single-post {
                 .testimonial-detailed {
                     margin-top: 30px;
                     margin-bottom: 60px;
+                    @include font16;
+                    opacity: 0.8;
                 }
             }
 
@@ -969,11 +990,18 @@ body.single-post {
 
     .faq {
         padding: var(--section-padding);
-        color: #fff;
         background: $primary-color;
+        color: #fff;
 
         h2 {
             margin: 35px 0 25px 0;
+            color: #fff;
+        }
+
+        .description{
+            color: #fff;
+            opacity: 0.8;
+            @include font16;
         }
 
         .contact-me-btn {
@@ -1003,19 +1031,21 @@ body.single-post {
                             display: flex;
                             justify-content: space-between;
                             cursor: pointer;
+                            color: #fff;
+                            gap: 20px;
+
                         }
 
                         .faq-title::after {
-                            content: "▲";
-                            background: $secondary-color;
-                            display: flex;
+                            content: "";
+                            background: url(/wp-content/themes/webdevsahil/assets/images/icons/up-icon.png);
                             width: 40px;
                             height: 40px;
-                            align-items: center;
-                            justify-content: center;
-                            border-radius: 50%;
-                            font-size: 16px;
-                            color: #fff;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: contain;
+                            flex-shrink:  0;
+
                         }
 
                         .faq-description {
@@ -1031,12 +1061,23 @@ body.single-post {
                         background: #fff;
                         color: #000;
 
+                        .faq-title{
+                            color: #000;
+                        }
+
                         .faq-description {
                             display: block;
                         }
 
                         .faq-title::after {
-                            content: "\25BC";
+                            content: "";
+                            background: url(/wp-content/themes/webdevsahil/assets/images/icons/down-icon.png);
+                            width: 40px;
+                            height: 40px;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: contain;
+                            flex-shrink:  0;
                         }
                     }
 
@@ -1168,10 +1209,20 @@ body.single-post {
     color: #fff;
     padding: var(--section-padding);
 
+    h2, p{
+        color: #fff;
+        opacity: .8;
+    }
+
     .get-in-touch-grid{
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 130px;
+
+        .introductory-text{
+            opacity: 1;
+
+        }
 
         h2{
             margin-top: 40px;
@@ -1184,6 +1235,7 @@ body.single-post {
         .description{
             color: #B1B1B9;
             margin: 20px 0;
+            @include font16;
         }
 
         .contact-form{
@@ -1215,6 +1267,7 @@ body.single-post {
             display: flex;
             align-items: center;
             gap: 16px;
+            @include font20;
         }
 
         .contact-point:not(:last-child){
